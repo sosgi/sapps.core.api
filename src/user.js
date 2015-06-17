@@ -1,10 +1,10 @@
 
-export class IUserManager{
+export class IUserService{
     getUser(){
     }
-    login(login, password) {
-    }
-    logout(){
+
+    update(data){
+
     }
 }
 
@@ -19,6 +19,3 @@ export class UserEvent{
         this.user = user;
     }
 }
-
-export const LOGIN = 'login';
-export const LOGOUT = 'logout';

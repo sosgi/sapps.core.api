@@ -1,7 +1,7 @@
 System.register([], function (_export) {
     "use strict";
 
-    var IUserService, IUserListener, UserEvent;
+    var IAuthService, IAuthListener, AuthEvent;
 
     var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -10,47 +10,47 @@ System.register([], function (_export) {
     return {
         setters: [],
         execute: function () {
-            IUserService = (function () {
-                function IUserService() {
-                    _classCallCheck(this, IUserService);
+            IAuthService = (function () {
+                function IAuthService() {
+                    _classCallCheck(this, IAuthService);
                 }
 
-                _createClass(IUserService, [{
-                    key: "getUser",
-                    value: function getUser() {}
+                _createClass(IAuthService, [{
+                    key: "login",
+                    value: function login(_login, password) {}
                 }, {
-                    key: "update",
-                    value: function update(data) {}
+                    key: "logout",
+                    value: function logout() {}
                 }]);
 
-                return IUserService;
+                return IAuthService;
             })();
 
-            _export("IUserService", IUserService);
+            _export("IAuthService", IAuthService);
 
-            IUserListener = (function () {
-                function IUserListener() {
-                    _classCallCheck(this, IUserListener);
+            IAuthListener = (function () {
+                function IAuthListener() {
+                    _classCallCheck(this, IAuthListener);
                 }
 
-                _createClass(IUserListener, [{
-                    key: "userEvent",
-                    value: function userEvent(event) {}
+                _createClass(IAuthListener, [{
+                    key: "authEvent",
+                    value: function authEvent(event) {}
                 }]);
 
-                return IUserListener;
+                return IAuthListener;
             })();
 
-            _export("IUserListener", IUserListener);
+            _export("IAuthListener", IAuthListener);
 
-            UserEvent = function UserEvent(type, user) {
-                _classCallCheck(this, UserEvent);
+            AuthEvent = function AuthEvent(type, user) {
+                _classCallCheck(this, AuthEvent);
 
                 this.type = type;
                 this.user = user;
             };
 
-            _export("UserEvent", UserEvent);
+            _export("AuthEvent", AuthEvent);
         }
     };
 });
